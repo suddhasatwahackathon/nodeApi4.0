@@ -1,9 +1,4 @@
-#Angular Framework 
-
-
-Landing Index Page - Runs from the root
-
-Admin Index Page - Runs from app folder
+Node JS Api
 
 ----------------------------------------
 
