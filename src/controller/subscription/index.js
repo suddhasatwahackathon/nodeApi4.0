@@ -1,6 +1,4 @@
-var mongoose = require('mongoose'),
-subscriptions = mongoose.model('subscription');
-
+var subscriptions = require('./../../model/subscription');
 exports.findAll = function(req, res){
   subscriptions.find({},function(err, results) {
     return res.send(results);
