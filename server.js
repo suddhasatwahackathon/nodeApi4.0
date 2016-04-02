@@ -1,10 +1,19 @@
 var express = require('express');
 var app     = express();
-
 app.use('/app', express.static('app'));
 app.use('/bower_components', express.static('bower_components'));
 var nodemailer = require('nodemailer');
-var bodyParser =    require("body-parser");
+var bodyParser = require("body-parser");
+var mongoose = require('mongoose');
+var mongoUri = 'mongodb://suddha:satwa900@ds055525.mlab.com:55525/sbdb';
+mongoose.connect(mongoUri);
+var db = mongoose.connection;
+db.on('error', function () {
+  throw new Error('unable to connect to database at ' + mongoUri);
+});
+
+require('./src/model/subscription');
+require('./src/routes')(app);
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport({
   service : "gmail",
@@ -36,12 +45,9 @@ var allowCrossDomain = function(req, res, next) {
 }
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-/*app.use(function(req,res,next){
-    req.db = db;
-    next();
-});*/
-//app.use(allowCrossDomain);
+//app.use(express.logger('dev'));
 app.get('/', function(req, res) {
+  console.log('welcome to apiss');
     res.send('welcome to api');
 });
 app.post('/mail', function(req, res) {
@@ -57,5 +63,5 @@ app.post('/mail', function(req, res) {
 	    res.send("message sent");
 	});
 });
-app.listen(8000);
+app.listen(8000).on('error', function(err) { console.log(error)});
 console.log('Magic happens on 8000');
