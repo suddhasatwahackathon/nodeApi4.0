@@ -28,7 +28,7 @@ exports.add = function(req, res) {
     if (err) return console.log(err); 
     return res.send(res);
   });*/
-console.log(req.body);
+console.log('hello send me rquest',req.body);
 }
 
 exports.delete = function(req, res){
