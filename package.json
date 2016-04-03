@@ -2,7 +2,7 @@
   "name": "admin",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "npm install mongoose,nodemon server.js"
   },
   "private": true,
   "devDependencies": {
