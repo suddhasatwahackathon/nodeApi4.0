@@ -45,6 +45,7 @@ var allowCrossDomain = function(req, res, next) {
 }
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(allowCrossDomain);
 require('./src/model/subscription');
 require('./src/routes')(app);
 //app.use(express.logger('dev'));
