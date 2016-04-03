@@ -14,8 +14,6 @@ db.on('error', function () {
   throw new Error('unable to connect to database at ' + mongoUri);
 });
 
-require('./src/model/subscription');
-require('./src/routes')(app);
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport({
   service : "gmail",
@@ -47,6 +45,8 @@ var allowCrossDomain = function(req, res, next) {
 }
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+require('./src/model/subscription');
+require('./src/routes')(app);
 //app.use(express.logger('dev'));
 app.get('/', function(req, res) {
   console.log('welcome to apiss');
