@@ -5,7 +5,7 @@ app.use('/bower_components', express.static('bower_components'));
 var nodemailer = require('nodemailer');
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
-//var mongoUri = 'mongodb://suddha:satwa900@ds055525.mlab.com:55525/sbdb';  local
+//var mongoUri = 'mongodb://suddha:satwa900@ds055525.mlab.com:55525/sbdb';  //local
 var mongoUri = 'mongodb://suddha:satwa900@ds015780.mlab.com:15780/heroku_hzcv8fd5'; //production
 
 mongoose.connect(mongoUri);
@@ -65,5 +65,7 @@ app.post('/mail', function(req, res) {
 	    res.send("message sent");
 	});
 });
-app.listen(8000).on('error', function(err) { console.log(error)});
-console.log('Magic happens on 8000');
+
+app.set('port', (process.env.PORT || 5000));
+app.listen(app.get('port')).on('error', function(err) { console.log(error)});
+console.log('Magic happens on',app.get('port'));
