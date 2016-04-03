@@ -5,8 +5,8 @@ app.use('/bower_components', express.static('bower_components'));
 var nodemailer = require('nodemailer');
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
-//var mongoUri = 'mongodb://suddha:satwa900@ds055525.mlab.com:55525/sbdb';  //local
-var mongoUri = 'mongodb://suddha:satwa900@ds015780.mlab.com:15780/heroku_hzcv8fd5'; //production
+var mongoUri = 'mongodb://suddha:satwa900@ds055525.mlab.com:55525/sbdb';  //local
+//var mongoUri = 'mongodb://suddha:satwa900@ds015780.mlab.com:15780/heroku_hzcv8fd5'; //production
 
 mongoose.connect(mongoUri);
 var db = mongoose.connection;
