@@ -26,7 +26,7 @@ exports.update = function(req, res) {
 exports.add = function(req, res) {
   subscriptions.create(req.body, function (err, subscriptions) {
     if (err) return console.log(err); 
-    return res.send(subscriptions);
+    return res.send(req);
   });
 }
 
