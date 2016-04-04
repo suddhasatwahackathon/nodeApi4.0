@@ -1,4 +1,4 @@
-exports.nodemailer = function(nodemailer){
+exports.module = function(nodemailer){
 	var transporter = nodemailer.createTransport({
 	  service : "gmail",
 	  auth    : {
@@ -9,7 +9,7 @@ exports.nodemailer = function(nodemailer){
 	    // pass : 'my"annoying\'password',
 	  }
 	});
-	var mailSender=function(toEmail){
+/*	var mailSender=function(toEmail){
 	// setup e-mail data with unicode symbols
 		var mailOptions = {
 		    from: '"Slipbeep" <support@slipbeep.com>', // sender address
@@ -19,6 +19,6 @@ exports.nodemailer = function(nodemailer){
 		    html: "<p>All Gaadi solutions there when we will be finally here.</p><p>Subscribe early for , Free services, Mega cashbacks & discounts After subscription of the subscriber.Thanks for ur interest, we will notify u.</p><pThanks Slipbeep</p>" // html body
 			}
 		return mailOptions;
-	}
+	}*/
 
 }
