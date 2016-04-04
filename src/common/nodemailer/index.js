@@ -1,4 +1,4 @@
-exports.module = function(nodemailer){
+module.exports = function(nodemailer){
 	var transporter = nodemailer.createTransport({
 	  service : "gmail",
 	  auth    : {
