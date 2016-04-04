@@ -2,7 +2,6 @@ Node JS Api
 
 ----------------------------------------
 
-
 Project Dependencies
 
 If you have nodejs inn the system, then ignore the below three liness
@@ -16,15 +15,11 @@ sudo chown -R $USER:$GROUP ~/.npm
 ------------------------------------------------------------
 Dependencies
 
-sudo npm install -g yo grunt-cli bower
-
 npm cache clean
-
-bower cache clean
 
 npm install
 
-bower install
+
 -------------------------------------------------------------
 
 
