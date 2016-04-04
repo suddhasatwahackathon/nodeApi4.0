@@ -41,10 +41,11 @@
   },
   "dependencies": {
     "body-parser": "*",
+    "cors": "^2.7.1",
     "express": "*",
     "mongodb": "~1.4",
+    "mongoose": ">=4.1.11",
     "monk": "https://github.com/vccabral/monk.git",
-    "nodemailer": "^2.3.0",
-     "mongoose": ">=4.1.11"
+    "nodemailer": "^2.3.0"
   }
 }
