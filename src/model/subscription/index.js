@@ -4,4 +4,10 @@ Schema = mongoose.Schema;
 var subscriptionschema = new Schema({
   email: String
 });
-module.exports = mongoose.model('Subscription', subscriptionschema,'subscription');
+subscriptions = mongoose.model('Subscription', subscriptionschema,'subscription');
+module.exports = subscriptions;
+exports.findAll = function(){
+  subscriptions.find({},function(err, results) {
+    return res.send(results);
+  });
+}
