@@ -55,10 +55,10 @@ exports.add = function(req, res, next) {
     var transporter = nodemailer.createTransport({
       service : "gmail",
       auth    : {
-        user     : "suddha90@gmail.com",
+        user     : "slipbeepnodemailer@gmail.com",
 
         // neither of these work
-        pass : "satwa900900",
+        pass : "nodemailer@12345",
         // pass : 'my"annoying\'password',
       }
     });    
