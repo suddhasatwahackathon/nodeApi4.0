@@ -9,6 +9,7 @@ module.exports = function(nodemailer){
 	    // pass : 'my"annoying\'password',
 	  }
 	});
+	return transporter;
 /*	var mailSender=function(toEmail){
 	// setup e-mail data with unicode symbols
 		var mailOptions = {
