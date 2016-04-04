@@ -20,7 +20,5 @@ exports.addObj = function(req,res, sendMail, mailerTransport) {
         console.log('Message info: ' + info);
         return res.send(info);        
     });    
-    //return res.send(subscriptions);          
   });
 }
-//module.exports = subscriptions;
