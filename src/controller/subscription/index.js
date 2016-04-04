@@ -33,10 +33,10 @@ exports.add = function(req, res, next) {
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
             return console.log(error);
-        }*/
+        }
         console.log('Message info: ' + info);
         return res.send(info);        
-    });    
+    }); */   
     //return res.send(subscriptions);          
   });
 }
