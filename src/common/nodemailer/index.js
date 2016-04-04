@@ -9,7 +9,7 @@ exports.nodemailer = function(nodemailer){
 	    // pass : 'my"annoying\'password',
 	  }
 	});
-	function mailSender(toEmail){
+	var mailSender=function(toEmail){
 	// setup e-mail data with unicode symbols
 		var mailOptions = {
 		    from: '"Slipbeep" <support@slipbeep.com>', // sender address
