@@ -1,12 +1,12 @@
-var subscriptions = require('./../../model/subscription');
+var subscriptionsObj = require('./../../model/subscription');
 var mailerTransport = require('./../../common/nodemailer').transporterObj;
 exports.findAll = function(req, res){
-  subscriptions.findAll;
+  console.log(subscriptionsObj);
 };
 
 exports.findById = function(req, res){
   var id = req.params.id;
-  subscriptions.findOne({'_id':id},function(err, result) {
+  subscriptionsObj.findOne({'_id':id},function(err, result) {
     return res.send(result);
   });
 };
@@ -15,7 +15,7 @@ exports.update = function(req, res) {
   var id = req.params.id;
   var updates = req.body;
 
-  subscriptions.update({'_id':id}, updates, function (err, numberAffected, raw) {
+  subscriptionsObj.update({'_id':id}, updates, function (err, numberAffected, raw) {
     if (err) return console.log(err);
     console.log('Updated %d subscriptions', numberAffected);
     return res.send(raw);
@@ -23,7 +23,7 @@ exports.update = function(req, res) {
 }
 
 exports.add = function(req, res, next) {
-  subscriptions.create(req.body, function (err, subscriptions) {
+  subscriptionsObj.create(req.body, function (err, subscriptions) {
     if (err) return console.log(err); 
     var sendMail = require('./../../common/nodemailer').sendmail(req.body.email);
     mailerTransport.sendMail(sendMail, function(error, info){
@@ -39,13 +39,13 @@ exports.add = function(req, res, next) {
 
 exports.delete = function(req, res){
   var id = req.params.id;
-  subscriptions.remove({'_id':id},function(result) {
+  subscriptionsObj.remove({'_id':id},function(result) {
     return res.send(result);
   });
 };
 
 exports.import = function(req, res){
-  subscriptions.create( 
+  subscriptionsObj.create( 
     { "email": "Ben" },
     { "email": "Mike D."},
     { "email": "Eric"},
