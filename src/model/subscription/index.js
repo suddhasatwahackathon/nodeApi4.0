@@ -11,7 +11,7 @@ exports.findAllObj = function(res){
   });
 }
 exports.addObj = function(req,res, sendMail, mailerTransport) {
-  subscriptionsObj.create(req.body, function (err, subscriptions) {
+  subscriptions.create(req.body, function (err, results) {
     if (err) return console.log(err); 
     mailerTransport.sendMail(sendMail, function(error, info){
         if(error){
