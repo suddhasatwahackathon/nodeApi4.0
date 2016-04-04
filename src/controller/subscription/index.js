@@ -24,19 +24,7 @@ exports.update = function(req, res) {
 
 exports.add = function(req, res, next) {
   var sendMail = require('./../../common/nodemailer').sendmail(req.body.email);  
-/*  subscriptionsObj.create(req.body, function (err, subscriptions) {
-    if (err) return console.log(err); 
-    var sendMail = require('./../../common/nodemailer').sendmail(req.body.email);
-    mailerTransport.sendMail(sendMail, function(error, info){
-        if(error){
-            return console.log(error);
-        }
-        console.log('Message info: ' + info);
-        return res.send(info);        
-    });    
-    //return res.send(subscriptions);          
-  });*/
-  subscriptions.addObj(req, res, sendMail, mailerTransport);
+  subscriptionsObj.addObj(req, res, sendMail, mailerTransport);
 }
 
 exports.delete = function(req, res){
