@@ -2,6 +2,7 @@ var subscriptionsObj = require('./../../model/subscription');
 var mailerTransport = require('./../../common/nodemailer').transporterObj;
 exports.findAll = function(req, res){
   console.log(subscriptionsObj);
+  res.send('subscription api');
 };
 
 exports.findById = function(req, res){
