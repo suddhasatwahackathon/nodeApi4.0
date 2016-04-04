@@ -1,6 +1,7 @@
 var subscriptions = require('./../../model/subscription');
 var mailer = require('./../../common/nodemailer');
-console.log("mailer obj is",mailer.mailOptionsObj('suddha90@gmail.com'))
+var sendMail = require('./../../common/nodemailer').sendmail('suddha90@gmail.com');
+console.log("mailer obj is",sendMail)
 exports.findAll = function(req, res){
   subscriptions.find({},function(err, results) {
     return res.send(results);
