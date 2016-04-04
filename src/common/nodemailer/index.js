@@ -10,7 +10,8 @@
         // pass : 'my"annoying\'password',
       }
     });
-    function mailParam(email){
+    var sendmail = function(email){
+    	console.log("emaail is", email);
     	var mailOptions = {
         from: '"Slipbeep" <support@slipbeep.com>', // sender address
         to: email, // list of receivers
@@ -23,7 +24,7 @@
     
 
     var exportObj = {
-    	transporterObj:transporter
-    	//mailOptionsObj:mailOptions
+    	transporterObj:transporter,
+    	mailOptionsObj:sendmail(email)
     };
     module.exports = exportObj; 
