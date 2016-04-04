@@ -1,5 +1,5 @@
 var subscriptions = require('./../../model/subscription');
-var nodemailer = require('./../../common/nodemailer');
+require('./../../common/nodemailer');
 exports.findAll = function(req, res){
   subscriptions.find({},function(err, results) {
     return res.send(results);

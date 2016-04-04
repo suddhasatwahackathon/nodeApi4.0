@@ -46,7 +46,7 @@ app.use(allowCrossDomain);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 require('./src/model/subscription');
-require('./src/common/**');
+require('./src/common/nodemailer');
 require('./src/routes')(app);
 //app.use(express.logger('dev'));
 app.get('/', function(req, res) {
