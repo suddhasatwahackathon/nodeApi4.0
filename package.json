@@ -41,7 +41,6 @@
   },
   "dependencies": {
     "body-parser": "*",
-    "cors": "^2.7.1",
     "express": "*",
     "mongodb": "~1.4",
     "mongoose": ">=4.1.11",
