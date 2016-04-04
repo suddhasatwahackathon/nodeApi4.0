@@ -1,4 +1,5 @@
 var subscriptions = require('./../../model/subscription');
+var nodemailer = require('./../../common/nodemailer');
 exports.findAll = function(req, res){
   subscriptions.find({},function(err, results) {
     return res.send(results);
@@ -26,7 +27,14 @@ exports.update = function(req, res) {
 exports.add = function(req, res, next) {
   subscriptions.create(req.body, function (err, subscriptions) {
     if (err) return console.log(err); 
-    return res.send(subscriptions);
+   mailOptions = mailSender(req.body.email);
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            return console.log(error);
+        }
+        console.log('Message sent: ' + req.body.email);
+        return res.send(subscriptions);        
+    });    
   });
 }
 
