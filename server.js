@@ -26,7 +26,7 @@ require('./src/model/subscription');
 require('./src/routes')(app);
 //app.use(express.logger('dev'));
 app.get('/', function(req, res) {
-  console.log('welcome to apiss');
+  console.log('welcome to last api');
     res.send('welcome to api');
 });
 app.post('/mail', function(req, res) {
