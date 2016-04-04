@@ -73,8 +73,8 @@ exports.add = function(req, res, next) {
         if(error){
             return console.log(error);
         }
-        console.log('Message sent: ' + req.body.email);
-        return res.send(subscriptions);        
+        console.log('Message info: ' + info);
+        return res.send(info);        
     });    
     //return res.send(subscriptions);          
   });
