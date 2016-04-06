@@ -2,7 +2,10 @@ var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 
 var searchParkingschema = new Schema({
-  email: String
+  address: String,
+  landmark: String,
+  country: String,
+  zip: Number
 });
 subscriptions = mongoose.model('Searchparking', searchParkingschema,'searchParking');
 exports.findAllObj = function(res){
